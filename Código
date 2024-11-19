@@ -1,0 +1,17 @@
+const int pirPin = 2;   // Pino do sensor PIR
+const int ledPin = 13;  // Pino do LED
+
+void setup() {
+  pinMode(pirPin, INPUT); // Configura o PIR como entrada
+  pinMode(ledPin, OUTPUT); // Configura o LED como saída
+}
+
+void loop() {
+  int pirState = digitalRead(pirPin); // Lê o estado do PIR
+
+  if (pirState == HIGH) { // Movimento detectado
+    digitalWrite(ledPin, HIGH);  // Liga o LED
+  } else {
+    digitalWrite(ledPin, LOW);   // Desliga o LED
+  }
+}
